@@ -3,6 +3,7 @@ package steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,9 @@ public class DiscountStep {
     public void that_Im_on_qazando_website() throws Throwable {
         driver.get("https://www.qazando.com.br/curso.html");
         driver.manage().window().maximize();
+
+        Assert.assertEquals("Não acessou a aplicação", true, driver.findElement(By.id("btn-ver-cursos"))
+                .isDisplayed()); //verify if the element is displayed in the screen
     }
 
     @When("^I fill email field$")
@@ -35,7 +39,8 @@ public class DiscountStep {
     @Then("^I see the discount code$")
     public void i_see_the_discount_code() throws Throwable {
         String textCoupon = driver.findElement(By.cssSelector("#cupom > h2 > span")).getText();
-        System.out.println(textCoupon);
+
+        Assert.assertEquals("O cupom está diferente", "QAZANDO15OFF", textCoupon);
 
         driver.quit();
     }

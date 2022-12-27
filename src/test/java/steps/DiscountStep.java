@@ -6,12 +6,10 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DiscountStep {
+import runner.RunCucumberTest;
 
-    WebDriver driver = new ChromeDriver();
+public class DiscountStep extends RunCucumberTest {
 
     @Given("^that Im on qazando website$")
     public void that_Im_on_qazando_website() throws Throwable {
@@ -39,9 +37,6 @@ public class DiscountStep {
     @Then("^I see the discount code$")
     public void i_see_the_discount_code() throws Throwable {
         String textCoupon = driver.findElement(By.cssSelector("#cupom > h2 > span")).getText();
-
         Assert.assertEquals("O cupom está diferente", "QAZANDO15OFF", textCoupon);
-
-        driver.quit();
     }
 }

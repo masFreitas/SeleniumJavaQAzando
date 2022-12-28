@@ -4,8 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import support.Utils;
 
-public class HomePage{
+public class HomePage extends Utils {
 
     WebDriver driver;
     public HomePage(WebDriver driver) {
@@ -16,7 +17,9 @@ public class HomePage{
         driver.get("https://www.qazando.com.br/curso.html");
         driver.manage().window().maximize();
 
-        Assert.assertEquals("Não acessou a aplicação", true, driver.findElement(By.id("btn-ver-cursos"))
+        waitElementToBePresentOnPage(By.id("btn-ver-cursos"), 10);
+
+        Assert.assertTrue("Não acessou a aplicação", driver.findElement(By.id("btn-ver-cursos"))
                 .isDisplayed()); //verify if the element is displayed in the screen
     }
 

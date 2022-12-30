@@ -5,6 +5,7 @@ Feature: Receive discount coupon
   I want to receive a discount coupon
   To buy a course with reduced price
 
+  @coupon
   Scenario: See coupon code
     Given that Im on qazando website
     When I fill email field

@@ -13,30 +13,36 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 8,
+  "line": 9,
   "name": "See coupon code",
   "description": "",
   "id": "receive-discount-coupon;see-coupon-code",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@coupon"
+    }
+  ]
 });
 formatter.step({
-  "line": 9,
+  "line": 10,
   "name": "that Im on qazando website",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 10,
+  "line": 11,
   "name": "I fill email field",
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
+  "line": 12,
   "name": "click on ganhar cupom button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
+  "line": 13,
   "name": "I see the discount code",
   "keyword": "Then "
 });
@@ -44,28 +50,28 @@ formatter.match({
   "location": "DiscountStep.thatImOnQazandoWebsite()"
 });
 formatter.result({
-  "duration": 2126669100,
+  "duration": 2302751400,
   "status": "passed"
 });
 formatter.match({
   "location": "DiscountStep.iFillEmailField()"
 });
 formatter.result({
-  "duration": 2113503600,
+  "duration": 2100941300,
   "status": "passed"
 });
 formatter.match({
   "location": "DiscountStep.clickOnGanharCupomButton()"
 });
 formatter.result({
-  "duration": 57127200,
+  "duration": 63832000,
   "status": "passed"
 });
 formatter.match({
   "location": "DiscountStep.iSeeTheDiscountCode()"
 });
 formatter.result({
-  "duration": 67528500,
+  "duration": 43927600,
   "status": "passed"
 });
 });

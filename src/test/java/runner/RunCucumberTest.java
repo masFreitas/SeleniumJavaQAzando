@@ -14,7 +14,7 @@ import static cucumber.api.SnippetType.CAMELCASE;
 @CucumberOptions(
         plugin = {"json:target/reports/cucumberReport.json", "html:target/reports/"}, //use to configure reports
         features = "src/test/resources/features", //directory where feature are
-        tags = {"~@ignore"}, //use to run tagged BBDs
+        tags = {"@coupon"}, //use to run tagged BBDs
         glue = {"steps"}, //directory where steps are
         snippets = CAMELCASE
 )
